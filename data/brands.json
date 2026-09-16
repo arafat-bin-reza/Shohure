@@ -1,0 +1,12 @@
+[
+  { "slug": "royal-grain",    "name": "Royal Grain",    "logo": "assets/img/brands/royal-grain.svg",    "blurb": "Aged basmati from the Himalayan foothills." },
+  { "slug": "sona-fields",    "name": "Sona Fields",    "logo": "assets/img/brands/sona-fields.svg",    "blurb": "Everyday rice, farm-direct." },
+  { "slug": "desh-atta",      "name": "Desh Atta",      "logo": "assets/img/brands/desh-atta.svg",      "blurb": "Stone-ground chakki atta." },
+  { "slug": "golden-harvest", "name": "Golden Harvest", "logo": "assets/img/brands/golden-harvest.svg", "blurb": "Flours, sooji and besan." },
+  { "slug": "shakti-masala",  "name": "Shakti Masala",  "logo": "assets/img/brands/shakti-masala.svg",  "blurb": "Fresh-ground spice blends." },
+  { "slug": "padma-foods",    "name": "Padma Foods",    "logo": "assets/img/brands/padma-foods.svg",    "blurb": "Pulses, pickles and pastes." },
+  { "slug": "amrita-dairy",   "name": "Amrita Dairy",   "logo": "assets/img/brands/amrita-dairy.svg",   "blurb": "Paneer, ghee and dahi." },
+  { "slug": "chai-kothi",     "name": "Chai Kothi",     "logo": "assets/img/brands/chai-kothi.svg",     "blurb": "Assam and Darjeeling teas." },
+  { "slug": "mitha-ghar",     "name": "Mitha Ghar",     "logo": "assets/img/brands/mitha-ghar.svg",     "blurb": "Sweets and namkeen." },
+  { "slug": "nadia-naturals", "name": "Nadia Naturals", "logo": "assets/img/brands/nadia-naturals.svg", "blurb": "Cold-pressed oils." }
+]

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Sona Fields Idli Rice">
+  <rect width="600" height="600" fill="#ede4d3" opacity="1"/>
+  <g transform="">
+    <rect x="150" y="90" width="300" height="420" rx="26" fill="#fff" stroke="#5b4632" stroke-width="6"/>
+    <rect x="150" y="90" width="300" height="70" rx="26" fill="#5b4632"/>
+    <rect x="150" y="130" width="300" height="30" fill="#5b4632"/>
+    <text x="300" y="138" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#fff" letter-spacing="1">SONA FIELDS</text>
+    <text x="300" y="250" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#5b4632">Sona Fields Idli</text>
+    <text x="300" y="290" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#5b4632">Rice</text>
+    <rect x="215" y="400" width="170" height="44" rx="22" fill="#ede4d3" stroke="#5b4632" stroke-width="3"/>
+    <text x="300" y="429" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#5b4632">5 kg</text>
+  </g>
+  <text x="300" y="570" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="14" fill="#5b4632" opacity=".6">placeholder · replace with product photo</text>
+</svg>

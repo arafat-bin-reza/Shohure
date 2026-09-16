@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Sona Fields Golden Sella Basmati Rice">
+  <rect width="600" height="600" fill="#ffe9d6" opacity="0.92"/>
+  <g transform="skewY(-4) translate(0 30)">
+    <rect x="150" y="90" width="300" height="420" rx="26" fill="#fff" stroke="#b4530a" stroke-width="6"/>
+    <rect x="150" y="90" width="300" height="70" rx="26" fill="#b4530a"/>
+    <rect x="150" y="130" width="300" height="30" fill="#b4530a"/>
+    <text x="300" y="138" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#fff" letter-spacing="1">SONA FIELDS</text>
+    <text x="300" y="250" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#b4530a">Sona Fields Golden</text>
+    <text x="300" y="290" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#b4530a">Sella Basmati Rice</text>
+    <rect x="215" y="400" width="170" height="44" rx="22" fill="#ffe9d6" stroke="#b4530a" stroke-width="3"/>
+    <text x="300" y="429" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#b4530a">5 kg</text>
+  </g>
+  <text x="300" y="570" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="14" fill="#b4530a" opacity=".6">placeholder · replace with product photo</text>
+</svg>

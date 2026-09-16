@@ -2,6 +2,7 @@
   "name": "deshi-basket",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "description": "Deshi Basket — a static South Asian grocery storefront on GitHub Pages",
   "scripts": {
     "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./assets/css/main.css --watch",

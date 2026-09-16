@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Ground Spices">
+  <rect width="400" height="400" fill="#ffe9d6"/>
+  <circle cx="200" cy="180" r="110" fill="#fff" stroke="#b4530a" stroke-width="6"/>
+  <text x="200" y="205" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="84" font-weight="700" fill="#b4530a">GS</text>
+  <text x="200" y="345" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="26" font-weight="600" fill="#b4530a">Ground Spices</text>
+</svg>

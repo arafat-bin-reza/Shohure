@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Dal">
+  <rect width="400" height="400" fill="#fdebc8"/>
+  <circle cx="200" cy="180" r="110" fill="#fff" stroke="#a85504" stroke-width="6"/>
+  <text x="200" y="205" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="84" font-weight="700" fill="#a85504">D</text>
+  <text x="200" y="345" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="26" font-weight="600" fill="#a85504">Dal</text>
+</svg>

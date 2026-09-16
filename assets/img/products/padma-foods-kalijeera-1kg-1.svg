@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Padma Foods Kalijeera Aromatic Rice">
+  <rect width="600" height="600" fill="#fbd48f" opacity="1"/>
+  <g transform="">
+    <rect x="150" y="90" width="300" height="420" rx="26" fill="#fff" stroke="#6d380d" stroke-width="6"/>
+    <rect x="150" y="90" width="300" height="70" rx="26" fill="#6d380d"/>
+    <rect x="150" y="130" width="300" height="30" fill="#6d380d"/>
+    <text x="300" y="138" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#fff" letter-spacing="1">PADMA FOODS</text>
+    <text x="300" y="250" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#6d380d">Padma Foods</text>
+    <text x="300" y="290" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#6d380d">Kalijeera Aromatic</text>
+    <text x="300" y="330" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#6d380d">Rice</text>
+    <rect x="215" y="400" width="170" height="44" rx="22" fill="#fbd48f" stroke="#6d380d" stroke-width="3"/>
+    <text x="300" y="429" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#6d380d">1 kg</text>
+  </g>
+  <text x="300" y="570" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="14" fill="#6d380d" opacity=".6">placeholder · replace with product photo</text>
+</svg>

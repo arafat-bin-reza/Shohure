@@ -1,0 +1,39 @@
+[
+  { "slug": "rice", "name": "Rice", "parent": null, "order": 1, "tile": true, "image": "assets/img/categories/rice.svg", "blurb": "Basmati, sona masoori, idli rice and more." },
+  { "slug": "basmati-rice", "name": "Basmati Rice", "parent": "rice", "order": 1, "tile": true, "image": "assets/img/categories/basmati-rice.svg", "blurb": "Long-grain aromatic basmati." },
+  { "slug": "non-basmati-rice", "name": "Non-Basmati Rice", "parent": "rice", "order": 2, "tile": true, "image": "assets/img/categories/non-basmati-rice.svg", "blurb": "Sona masoori, ponni, kolam and everyday rice." },
+  { "slug": "idli-dosa-rice", "name": "Idli & Dosa Rice", "parent": "rice", "order": 3, "tile": false, "image": "assets/img/categories/idli-dosa-rice.svg", "blurb": "Parboiled rice for batter." },
+  { "slug": "poha", "name": "Poha & Puffed Rice", "parent": "rice", "order": 4, "tile": false, "image": "assets/img/categories/poha.svg", "blurb": "Flattened and puffed rice." },
+
+  { "slug": "atta-flours", "name": "Atta & Flours", "parent": null, "order": 2, "tile": true, "image": "assets/img/categories/atta-flours.svg", "blurb": "Chakki atta, besan, maida and sooji." },
+  { "slug": "atta", "name": "Atta", "parent": "atta-flours", "order": 1, "tile": true, "image": "assets/img/categories/atta.svg", "blurb": "Whole-wheat chakki atta." },
+  { "slug": "besan", "name": "Besan", "parent": "atta-flours", "order": 2, "tile": false, "image": "assets/img/categories/besan.svg", "blurb": "Gram flour." },
+  { "slug": "rice-flour", "name": "Rice Flour", "parent": "atta-flours", "order": 3, "tile": false, "image": "assets/img/categories/rice-flour.svg", "blurb": "Fine and coarse rice flour." },
+  { "slug": "maida-sooji", "name": "Maida & Sooji", "parent": "atta-flours", "order": 4, "tile": false, "image": "assets/img/categories/maida-sooji.svg", "blurb": "All-purpose flour and semolina." },
+
+  { "slug": "pulses-lentils", "name": "Pulses & Lentils", "parent": null, "order": 3, "tile": true, "image": "assets/img/categories/pulses-lentils.svg", "blurb": "Dal, chana, rajma and beans." },
+  { "slug": "dal", "name": "Dal", "parent": "pulses-lentils", "order": 1, "tile": false, "image": "assets/img/categories/dal.svg", "blurb": "Toor, moong, masoor, urad." },
+  { "slug": "chana-beans", "name": "Chana & Beans", "parent": "pulses-lentils", "order": 2, "tile": false, "image": "assets/img/categories/chana-beans.svg", "blurb": "Kabuli chana, kala chana, rajma." },
+
+  { "slug": "spices", "name": "Spices & Condiments", "parent": null, "order": 4, "tile": true, "image": "assets/img/categories/spices.svg", "blurb": "Whole, ground and blended masalas." },
+  { "slug": "whole-spices", "name": "Whole Spices", "parent": "spices", "order": 1, "tile": false, "image": "assets/img/categories/whole-spices.svg", "blurb": "Cumin, cardamom, cloves, cinnamon." },
+  { "slug": "ground-spices", "name": "Ground Spices", "parent": "spices", "order": 2, "tile": false, "image": "assets/img/categories/ground-spices.svg", "blurb": "Turmeric, chilli, coriander powder." },
+  { "slug": "masala-blends", "name": "Masala Blends", "parent": "spices", "order": 3, "tile": true, "image": "assets/img/categories/masala-blends.svg", "blurb": "Garam masala, biryani, chaat masala." },
+
+  { "slug": "cooking-essentials", "name": "Cooking Essentials", "parent": null, "order": 5, "tile": true, "image": "assets/img/categories/cooking-essentials.svg", "blurb": "Oils, ghee, salt, sugar, pastes." },
+  { "slug": "oils-ghee", "name": "Oils & Ghee", "parent": "cooking-essentials", "order": 1, "tile": false, "image": "assets/img/categories/oils-ghee.svg", "blurb": "Mustard oil, sunflower oil, pure ghee." },
+  { "slug": "pickles-pastes", "name": "Pickles & Pastes", "parent": "cooking-essentials", "order": 2, "tile": true, "image": "assets/img/categories/pickles-pastes.svg", "blurb": "Achar, ginger-garlic paste, chutneys." },
+
+  { "slug": "sweets-snacks", "name": "Sweets & Snacks", "parent": null, "order": 6, "tile": true, "image": "assets/img/categories/sweets-snacks.svg", "blurb": "Namkeen, mithai, biscuits." },
+  { "slug": "namkeen", "name": "Namkeen", "parent": "sweets-snacks", "order": 1, "tile": false, "image": "assets/img/categories/namkeen.svg", "blurb": "Bhujia, chanachur, mixture." },
+  { "slug": "sweets", "name": "Sweets", "parent": "sweets-snacks", "order": 2, "tile": false, "image": "assets/img/categories/sweets.svg", "blurb": "Soan papdi, rasgulla, gulab jamun." },
+
+  { "slug": "tea-beverages", "name": "Tea & Beverages", "parent": null, "order": 7, "tile": true, "image": "assets/img/categories/tea-beverages.svg", "blurb": "CTC tea, masala chai, drinks." },
+  { "slug": "tea", "name": "Tea", "parent": "tea-beverages", "order": 1, "tile": false, "image": "assets/img/categories/tea.svg", "blurb": "Loose leaf and CTC." },
+  { "slug": "drinks", "name": "Drinks", "parent": "tea-beverages", "order": 2, "tile": false, "image": "assets/img/categories/drinks.svg", "blurb": "Sherbet, rooh afza, juices." },
+
+  { "slug": "frozen-fresh", "name": "Frozen & Fresh", "parent": null, "order": 8, "tile": true, "image": "assets/img/categories/frozen-fresh.svg", "blurb": "Paneer, parathas, frozen vegetables." },
+  { "slug": "paneer-dairy", "name": "Paneer & Dairy", "parent": "frozen-fresh", "order": 1, "tile": true, "image": "assets/img/categories/paneer-dairy.svg", "blurb": "Paneer, dahi, ghee." },
+  { "slug": "frozen-foods", "name": "Frozen Foods", "parent": "frozen-fresh", "order": 2, "tile": false, "image": "assets/img/categories/frozen-foods.svg", "blurb": "Parathas, samosas, kebabs." },
+  { "slug": "vegetables", "name": "Fresh Vegetables", "parent": "frozen-fresh", "order": 3, "tile": false, "image": "assets/img/categories/vegetables.svg", "blurb": "Weekly fresh veg box." }
+]
