@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Frozen Foods">
   <rect width="400" height="400" fill="#e8f0d8"/>
-  <circle cx="200" cy="180" r="110" fill="#fff" stroke="#3f5a1f" stroke-width="6"/>
-  <text x="200" y="205" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="84" font-weight="700" fill="#3f5a1f">FF</text>
-  <text x="200" y="345" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="26" font-weight="600" fill="#3f5a1f">Frozen Foods</text>
+  <circle cx="200" cy="200" r="120" fill="#fff" stroke="#3f5a1f" stroke-width="6"/>
+  <text x="200" y="228" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="92" font-weight="700" fill="#3f5a1f">FF</text>
 </svg>

@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./assets/css/main.css --watch",
     "build": "npx @tailwindcss/cli -i ./src/input.css -o ./assets/css/main.css --minify",
-    "serve": "npx serve . -l 8080 --no-clipboard",
+    "serve": "node scripts/serve.mjs 5173",
     "placeholders": "node scripts/placeholders.mjs",
     "check": "node scripts/check.mjs"
   },

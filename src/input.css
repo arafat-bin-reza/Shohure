@@ -4,13 +4,11 @@
 /* Self-hosted fonts (GDPR: no Google Fonts requests)                  */
 /* Files copied from @fontsource/* — see README "Fonts".               */
 /* ------------------------------------------------------------------ */
-@font-face { font-family: "Poppins"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/poppins-latin-500-normal.woff2") format("woff2"); }
 @font-face { font-family: "Poppins"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/poppins-latin-600-normal.woff2") format("woff2"); }
 @font-face { font-family: "Poppins"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/poppins-latin-700-normal.woff2") format("woff2"); }
 @font-face { font-family: "Inter";   font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/inter-latin-400-normal.woff2")   format("woff2"); }
 @font-face { font-family: "Inter";   font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/inter-latin-500-normal.woff2")   format("woff2"); }
 @font-face { font-family: "Inter";   font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/inter-latin-600-normal.woff2")   format("woff2"); }
-@font-face { font-family: "Inter";   font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/inter-latin-700-normal.woff2")   format("woff2"); }
 
 /* ------------------------------------------------------------------ */
 /* Design tokens — the ONLY place a colour or font name is defined.    */
@@ -24,9 +22,9 @@
   --color-brand-300: #f7b652;
   --color-brand-400: #f29a24;
   --color-brand-500: #e8850c;
-  --color-brand-600: #cf6f06;
-  --color-brand-700: #a85504;
-  --color-brand-800: #85430a;
+  --color-brand-600: #b05a04;   /* 4.9:1 on white — AA for body text */
+  --color-brand-700: #8a4403;
+  --color-brand-800: #6e3603;
   --color-brand-900: #6d380d;
 
   /* accent — leaf green */
@@ -40,7 +38,7 @@
   --color-cream:      #fffbf5;
   --color-ink:        #1c1917;
   --color-ink-muted:  #57534e;
-  --color-ink-faint:  #a8a29e;
+  --color-ink-faint:  #6f6a64;  /* 5.4:1 on white — AA */
   --color-line:       #ebe5dc;
   --color-surface:    #ffffff;
 
@@ -149,10 +147,13 @@
   .mega-panel[data-open] { display: block; }
 
   /* hero */
-  .hero-slide { @apply absolute inset-0 opacity-0 transition-opacity duration-700 ease-out; }
-  .hero-slide[data-active] { @apply opacity-100 z-10; }
-  .hero-dot { @apply size-2.5 rounded-full bg-white/60 transition-all; }
-  .hero-dot[aria-current="true"] { @apply w-6 bg-white; }
+  /* visibility is toggled too so inactive slides are neither clickable nor in the tab order */
+  .hero-slide { @apply absolute inset-0 opacity-0 invisible; transition: opacity .7s ease-out, visibility .7s; }
+  .hero-slide[data-active] { @apply opacity-100 visible z-10; }
+  /* 24×24 hit area (WCAG 2.5.8) around a 10px visual dot */
+  .hero-dot { @apply inline-flex size-6 items-center justify-center; }
+  .hero-dot::before { content: ""; @apply block h-2.5 w-2.5 rounded-full bg-white/60 transition-all; }
+  .hero-dot[aria-current="true"]::before { @apply w-6 bg-white; }
 
   /* drawer (mobile nav + cart) */
   .drawer { @apply fixed inset-y-0 z-[60] flex w-[min(92vw,26rem)] flex-col bg-surface shadow-float transition-transform duration-300 ease-out; }
@@ -174,6 +175,8 @@
   /* skip link */
   .skip-link { @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-white; }
 }
+
+html.announce-dismissed #announce { display: none; }
 
 /* Body scroll lock while a drawer is open */
 body[data-lock] { overflow: hidden; }

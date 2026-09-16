@@ -75,9 +75,8 @@ function categorySvg(c) {
   return `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="${esc(c.name)}">
   <rect width="400" height="400" fill="${bg}"/>
-  <circle cx="200" cy="180" r="110" fill="#fff" stroke="${fg}" stroke-width="6"/>
-  <text x="200" y="205" text-anchor="middle" ${FONT} font-size="84" font-weight="700" fill="${fg}">${esc(initials)}</text>
-  <text x="200" y="345" text-anchor="middle" ${FONT} font-size="26" font-weight="600" fill="${fg}">${esc(c.name)}</text>
+  <circle cx="200" cy="200" r="120" fill="#fff" stroke="${fg}" stroke-width="6"/>
+  <text x="200" y="228" text-anchor="middle" ${FONT} font-size="92" font-weight="700" fill="${fg}">${esc(initials)}</text>
 </svg>`;
 }
 
@@ -105,8 +104,7 @@ function heroSvg(h) {
   <rect width="1600" height="640" fill="url(#g)"/>
   <circle cx="1300" cy="320" r="260" fill="#fff" opacity=".08"/>
   <circle cx="1420" cy="120" r="140" fill="#fff" opacity=".08"/>
-  <text x="120" y="300" ${FONT} font-size="84" font-weight="700" fill="#fff">${esc(h.title)}</text>
-  <text x="120" y="370" ${FONT} font-size="34" fill="#fff" opacity=".9">${esc(h.sub)}</text>
+  <circle cx="1180" cy="520" r="90" fill="#fff" opacity=".06"/>
 </svg>`;
 }
 

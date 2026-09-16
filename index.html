@@ -3,13 +3,375 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deshi Basket — South Asian Groceries Online</title>
+  <title>Deshi Basket — South Asian Groceries Online in Germany</title>
+  <meta name="description" content="Basmati rice, chakki atta, dal, spices and snacks delivered across Germany. Free delivery over 49 €, next-day in Berlin.">
+  <link rel="canonical" href="https://arafat-bin-reza.github.io/shop/">
+  <meta name="theme-color" content="#b05a04">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Deshi Basket">
+  <meta property="og:title" content="Deshi Basket — South Asian Groceries Online in Germany">
+  <meta property="og:description" content="Basmati rice, chakki atta, dal, spices and snacks delivered across Germany. Free delivery over 49 €.">
+  <meta property="og:url" content="https://arafat-bin-reza.github.io/shop/">
+  <meta property="og:image" content="https://arafat-bin-reza.github.io/shop/assets/img/hero/hero-1.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Deshi Basket — South Asian Groceries Online">
+  <meta name="twitter:description" content="Basmati rice, chakki atta, dal, spices and snacks delivered across Germany.">
+  <meta name="twitter:image" content="https://arafat-bin-reza.github.io/shop/assets/img/hero/hero-1.svg">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/poppins-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <script>/* runs before first paint so the announcement bar never shifts the layout */try{if(localStorage.getItem('announce:dismissed:v1')==='1')document.documentElement.classList.add('announce-dismissed')}catch(e){}</script>
   <link rel="stylesheet" href="assets/css/main.css">
+  <script type="module" src="assets/js/main.js"></script>
 </head>
 <body>
-  <main class="container-x py-16">
-    <h1 class="text-3xl">Deshi Basket</h1>
-    <p class="mt-2 text-ink-muted">Deploy check — Tailwind CSS is applied if this text is muted grey and the heading is Poppins.</p>
-  </main>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ 1. Announcement bar ============ -->
+<div id="announce" class="bg-brand-700 text-white text-xs sm:text-sm">
+  <div class="container-x flex items-center justify-center gap-3 py-2 relative">
+    <p class="text-center"><strong>5 € cashback</strong> on your first order · Free delivery over 49 €</p>
+    <button type="button" id="announce-close" class="absolute right-2 sm:right-6 inline-flex size-7 items-center justify-center rounded-full hover:bg-white/15" aria-label="Dismiss announcement">
+      <svg class="size-4" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ============ 2. Header ============ -->
+<header class="sticky top-0 z-50 bg-surface/95 backdrop-blur border-b border-line">
+  <div class="container-x">
+    <div class="flex h-16 items-center gap-2 md:gap-6">
+      <button type="button" id="nav-open" class="btn-icon md:hidden -ml-2" aria-label="Open menu" aria-controls="nav-drawer" aria-expanded="false">
+        <svg class="size-6" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+
+      <a href="./" class="flex items-center gap-2 shrink-0" aria-label="DeshiBasket home">
+        <svg class="size-9 text-brand-600" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M6 16h28l-3 16a3 3 0 0 1-3 2.5H12A3 3 0 0 1 9 32L6 16Z" fill="currentColor"/>
+          <path d="M13 16c0-6 3-10 7-10s7 4 7 10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <path d="M14 22v7M20 22v7M26 22v7" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <span class="font-display font-bold text-lg sm:text-xl leading-none tracking-tight">Deshi<span class="text-brand-600">Basket</span></span>
+      </a>
+
+      <!-- desktop search -->
+      <form id="search-form" class="relative hidden md:flex flex-1 max-w-2xl mx-auto" role="search" action="search.html" method="get" autocomplete="off">
+        <label for="search-input" class="sr-only">Search products</label>
+        <svg class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 size-5 text-ink-faint" aria-hidden="true"><use href="#i-search"/></svg>
+        <input id="search-input" name="q" type="search" role="combobox" placeholder="Search rice, atta, dal, masala…" class="w-full h-11 rounded-pill border border-line bg-cream pl-11 pr-36 text-sm placeholder:text-ink-faint focus:border-brand-500 focus:bg-surface focus:outline-none" aria-controls="search-results" aria-expanded="false" aria-autocomplete="list">
+        <button type="button" id="search-reset" class="absolute right-24 top-1/2 -translate-y-1/2 btn-icon size-8" aria-label="Clear search" hidden>
+          <svg class="size-4" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+        <button type="submit" class="absolute right-1 top-1/2 -translate-y-1/2 btn btn-primary h-9 px-4">Search</button>
+        <ul id="search-results" class="absolute left-0 right-0 top-full mt-2 card overflow-hidden divide-y divide-line" role="listbox" hidden></ul>
+      </form>
+
+      <div class="ml-auto flex items-center gap-1 sm:gap-2">
+        <a href="account.html" class="btn btn-ghost hidden md:inline-flex">
+          <svg class="size-5" aria-hidden="true"><use href="#i-user"/></svg>
+          <span>Log in</span>
+        </a>
+        <button type="button" id="cart-open" class="btn btn-outline relative pl-3 pr-3 sm:pr-4" aria-controls="cart-drawer" aria-expanded="false" aria-label="Basket">
+          <svg class="size-5" aria-hidden="true"><use href="#i-cart"/></svg>
+          <span class="hidden sm:inline">Basket</span>
+          <span id="cart-count" class="absolute -top-1.5 -right-1.5 min-w-5 h-5 px-1 rounded-full bg-brand-600 text-white text-[11px] font-semibold leading-5 text-center" aria-live="polite" aria-atomic="true" hidden>0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- mobile search -->
+    <form class="md:hidden pb-3" role="search" action="search.html" method="get" data-search-mobile>
+      <label for="search-input-m" class="sr-only">Search products</label>
+      <div class="relative">
+        <svg class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 size-5 text-ink-faint" aria-hidden="true"><use href="#i-search"/></svg>
+        <input id="search-input-m" name="q" type="search" placeholder="Search rice, atta, dal, masala…" class="w-full h-11 rounded-pill border border-line bg-cream pl-11 pr-4 text-sm placeholder:text-ink-faint focus:border-brand-500 focus:bg-surface focus:outline-none">
+      </div>
+    </form>
+  </div>
+
+  <!-- ============ 3. Category nav (desktop) ============ -->
+  <nav id="cat-nav" class="relative hidden md:block border-t border-line" aria-label="Product categories">
+    <div class="container-x">
+      <ul id="cat-nav-list" class="flex min-h-11 items-center -mx-3 overflow-x-auto scroll-row gap-0 py-0"></ul>
+    </div>
+    <div id="mega-host"></div>
+  </nav>
+</header>
+
+<!-- mobile nav drawer -->
+<aside id="nav-drawer" class="drawer drawer-left" role="dialog" aria-modal="true" aria-label="Menu" tabindex="-1">
+  <div class="flex h-16 items-center justify-between border-b border-line px-4">
+    <span class="font-display font-semibold text-lg">Browse</span>
+    <button type="button" class="btn-icon" data-drawer-close aria-label="Close menu">
+      <svg class="size-6" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+  </div>
+  <div id="nav-drawer-body" class="flex-1 overflow-y-auto"></div>
+  <div class="border-t border-line p-4 flex gap-3">
+    <a href="account.html" class="btn btn-outline flex-1"><svg class="size-5" aria-hidden="true"><use href="#i-user"/></svg>Log in</a>
+    <a href="track-order.html" class="btn btn-ghost flex-1">Track order</a>
+  </div>
+</aside>
+
+<!-- cart drawer -->
+<aside id="cart-drawer" class="drawer drawer-right" role="dialog" aria-modal="true" aria-labelledby="cart-title" tabindex="-1">
+  <div class="flex h-16 items-center justify-between border-b border-line px-4">
+    <h2 id="cart-title" class="text-lg">Your basket <span id="cart-title-count" class="text-ink-muted font-normal text-base"></span></h2>
+    <button type="button" class="btn-icon" data-drawer-close aria-label="Close basket">
+      <svg class="size-6" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+  </div>
+  <div id="cart-shipping" class="px-4 pt-4"></div>
+  <div id="cart-notice" class="px-4" hidden></div>
+  <ul id="cart-lines" class="flex-1 overflow-y-auto px-4 py-2 divide-y divide-line"></ul>
+  <div id="cart-footer" class="border-t border-line p-4 space-y-3">
+    <div class="flex items-center justify-between text-sm"><span class="text-ink-muted">Subtotal</span><strong id="cart-subtotal" class="text-base">0,00 €</strong></div>
+    <p class="text-xs text-ink-faint">Incl. VAT. Shipping calculated at checkout.</p>
+    <button type="button" id="cart-checkout" class="btn btn-primary w-full h-12 text-base">Checkout</button>
+    <button type="button" class="btn btn-ghost w-full" data-drawer-close>Continue shopping</button>
+  </div>
+</aside>
+<div id="backdrop" class="backdrop" aria-hidden="true"></div>
+
+<main id="main">
+  <!-- ============ 4. Hero carousel ============ -->
+  <section id="hero" class="container-x pt-4" aria-roledescription="carousel" aria-label="Promotions">
+    <div class="relative overflow-hidden rounded-card aspect-[5/3] sm:aspect-[2/1] lg:aspect-[5/2] bg-brand-100" data-hero>
+      <div class="hero-slide" data-active role="group" aria-roledescription="slide" aria-label="1 of 3">
+        <img src="assets/img/hero/hero-1.svg" width="1600" height="640" alt="" class="size-full object-cover" loading="eager" fetchpriority="high">
+        <div class="absolute inset-0 flex flex-col justify-center gap-3 p-6 sm:p-12 lg:p-16 bg-gradient-to-r from-ink/45 via-ink/15 to-transparent text-white">
+          <p class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-brand-100">This week</p>
+          <h2 class="text-3xl sm:text-5xl lg:text-6xl font-bold text-white max-w-xl">Basmati week</h2>
+          <p class="text-sm sm:text-lg text-white/90 max-w-md">Up to 20% off aged basmati from Royal Grain and Sona Fields.</p>
+          <a href="category.html?slug=basmati-rice" class="btn btn-primary w-fit mt-2">Shop basmati</a>
+        </div>
+      </div>
+      <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
+        <img src="assets/img/hero/hero-2.svg" width="1600" height="640" alt="" class="size-full object-cover" loading="lazy">
+        <div class="absolute inset-0 flex flex-col justify-center gap-3 p-6 sm:p-12 lg:p-16 bg-gradient-to-r from-ink/45 via-ink/15 to-transparent text-white">
+          <p class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-leaf-100">Fresh every Friday</p>
+          <h2 class="text-3xl sm:text-5xl lg:text-6xl font-bold text-white max-w-xl">Stone-ground chakki atta</h2>
+          <p class="text-sm sm:text-lg text-white/90 max-w-md">Milled on Thursday, at your door within 48 hours.</p>
+          <a href="category.html?slug=atta" class="btn btn-primary w-fit mt-2">Shop atta</a>
+        </div>
+      </div>
+      <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
+        <img src="assets/img/hero/hero-3.svg" width="1600" height="640" alt="" class="size-full object-cover" loading="lazy">
+        <div class="absolute inset-0 flex flex-col justify-center gap-3 p-6 sm:p-12 lg:p-16 bg-gradient-to-r from-ink/45 via-ink/15 to-transparent text-white">
+          <p class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-brand-100">Delivery</p>
+          <h2 class="text-3xl sm:text-5xl lg:text-6xl font-bold text-white max-w-xl">Free delivery over 49 €</h2>
+          <p class="text-sm sm:text-lg text-white/90 max-w-md">Across Germany. Same-day inside the Berlin S-Bahn ring.</p>
+          <a href="shipping.html" class="btn btn-primary w-fit mt-2">Delivery info</a>
+        </div>
+      </div>
+
+      <button type="button" class="btn-icon absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-surface/90 shadow-card hidden sm:inline-flex" data-hero-prev aria-label="Previous slide">
+        <svg class="size-5" aria-hidden="true"><use href="#i-chevron-left"/></svg>
+      </button>
+      <button type="button" class="btn-icon absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-surface/90 shadow-card hidden sm:inline-flex" data-hero-next aria-label="Next slide">
+        <svg class="size-5" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+      </button>
+      <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2" data-hero-dots role="tablist" aria-label="Choose slide"></div>
+      <p class="sr-only" data-hero-status aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- ============ 5. Value-prop banners ============ -->
+  <section class="container-x pt-6" aria-label="Why shop with us">
+    <ul class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <li class="card flex items-start gap-3 p-4">
+        <span class="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-700"><svg class="size-5" aria-hidden="true"><use href="#i-gift"/></svg></span>
+        <div><p class="font-semibold text-sm">5 € cashback</p><p class="text-xs text-ink-muted mt-0.5">On your first order over 30 €</p></div>
+      </li>
+      <li class="card flex items-start gap-3 p-4">
+        <span class="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-leaf-50 text-leaf-700"><svg class="size-5" aria-hidden="true"><use href="#i-truck"/></svg></span>
+        <div><p class="font-semibold text-sm">Free delivery</p><p class="text-xs text-ink-muted mt-0.5">On orders over 49 € in Germany</p></div>
+      </li>
+      <li class="card flex items-start gap-3 p-4">
+        <span class="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-700"><svg class="size-5" aria-hidden="true"><use href="#i-clock"/></svg></span>
+        <div><p class="font-semibold text-sm">Next-day delivery</p><p class="text-xs text-ink-muted mt-0.5">Order by 14:00, Mon–Fri</p></div>
+      </li>
+      <li class="card flex items-start gap-3 p-4">
+        <span class="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-leaf-50 text-leaf-700"><svg class="size-5" aria-hidden="true"><use href="#i-pin"/></svg></span>
+        <div><p class="font-semibold text-sm">Same-day in Berlin</p><p class="text-xs text-ink-muted mt-0.5">Within the S-Bahn ring</p></div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ 6. Master Catalogue ============ -->
+  <section class="container-x pt-10" aria-labelledby="catalogue-h">
+    <div class="flex items-end justify-between gap-4 mb-4">
+      <h2 id="catalogue-h" class="text-xl sm:text-2xl">Shop by category</h2>
+      <a href="category.html" class="inline-block py-1 text-sm font-medium text-brand-700 hover:underline whitespace-nowrap">View all</a>
+    </div>
+    <ul id="catalogue-grid" class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
+      <li aria-hidden="true"><span class="skeleton block aspect-square rounded-full"></span><span class="skeleton mx-auto mt-2 block h-4 w-2/3"></span></li>
+      <li aria-hidden="true"><span class="skeleton block aspect-square rounded-full"></span><span class="skeleton mx-auto mt-2 block h-4 w-2/3"></span></li>
+      <li aria-hidden="true"><span class="skeleton block aspect-square rounded-full"></span><span class="skeleton mx-auto mt-2 block h-4 w-2/3"></span></li>
+      <li aria-hidden="true"><span class="skeleton block aspect-square rounded-full"></span><span class="skeleton mx-auto mt-2 block h-4 w-2/3"></span></li>
+      <li aria-hidden="true"><span class="skeleton block aspect-square rounded-full"></span><span class="skeleton mx-auto mt-2 block h-4 w-2/3"></span></li>
+      <li aria-hidden="true"><span class="skeleton block aspect-square rounded-full"></span><span class="skeleton mx-auto mt-2 block h-4 w-2/3"></span></li>
+      <li aria-hidden="true"><span class="skeleton block aspect-square rounded-full"></span><span class="skeleton mx-auto mt-2 block h-4 w-2/3"></span></li>
+      <li aria-hidden="true"><span class="skeleton block aspect-square rounded-full"></span><span class="skeleton mx-auto mt-2 block h-4 w-2/3"></span></li>
+      <li aria-hidden="true"><span class="skeleton block aspect-square rounded-full"></span><span class="skeleton mx-auto mt-2 block h-4 w-2/3"></span></li>
+      <li aria-hidden="true"><span class="skeleton block aspect-square rounded-full"></span><span class="skeleton mx-auto mt-2 block h-4 w-2/3"></span></li>
+      <li aria-hidden="true"><span class="skeleton block aspect-square rounded-full"></span><span class="skeleton mx-auto mt-2 block h-4 w-2/3"></span></li>
+      <li aria-hidden="true"><span class="skeleton block aspect-square rounded-full"></span><span class="skeleton mx-auto mt-2 block h-4 w-2/3"></span></li>
+    </ul>
+  </section>
+
+  <!-- ============ 7–9. Product carousels ============ -->
+  <section class="container-x pt-10" data-product-row data-subcategory="basmati-rice" aria-labelledby="row-basmati-rice-h">
+    <div class="flex items-end justify-between gap-4 mb-4">
+      <h2 id="row-basmati-rice-h" class="text-xl sm:text-2xl">Basmati Rice</h2>
+      <div class="flex items-center gap-2">
+        <a href="category.html?slug=basmati-rice" class="inline-block py-1 text-sm font-medium text-brand-700 hover:underline whitespace-nowrap">View all</a>
+        <div class="hidden sm:flex gap-1" data-row-arrows>
+          <button type="button" class="btn-icon border border-line" data-row-prev aria-label="Scroll Basmati Rice left"><svg class="size-5" aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+          <button type="button" class="btn-icon border border-line" data-row-next aria-label="Scroll Basmati Rice right"><svg class="size-5" aria-hidden="true"><use href="#i-chevron-right"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <ul class="scroll-row -mx-4 px-4 md:mx-0 md:px-0" data-row-track aria-label="Basmati Rice products"></ul>
+  </section>
+
+  <section class="container-x pt-10" data-product-row data-subcategory="non-basmati-rice" aria-labelledby="row-non-basmati-rice-h">
+    <div class="flex items-end justify-between gap-4 mb-4">
+      <h2 id="row-non-basmati-rice-h" class="text-xl sm:text-2xl">Non-Basmati Rice</h2>
+      <div class="flex items-center gap-2">
+        <a href="category.html?slug=non-basmati-rice" class="inline-block py-1 text-sm font-medium text-brand-700 hover:underline whitespace-nowrap">View all</a>
+        <div class="hidden sm:flex gap-1" data-row-arrows>
+          <button type="button" class="btn-icon border border-line" data-row-prev aria-label="Scroll Non-Basmati Rice left"><svg class="size-5" aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+          <button type="button" class="btn-icon border border-line" data-row-next aria-label="Scroll Non-Basmati Rice right"><svg class="size-5" aria-hidden="true"><use href="#i-chevron-right"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <ul class="scroll-row -mx-4 px-4 md:mx-0 md:px-0" data-row-track aria-label="Non-Basmati Rice products"></ul>
+  </section>
+
+  <section class="container-x pt-10" data-product-row data-subcategory="atta" aria-labelledby="row-atta-h">
+    <div class="flex items-end justify-between gap-4 mb-4">
+      <h2 id="row-atta-h" class="text-xl sm:text-2xl">Atta</h2>
+      <div class="flex items-center gap-2">
+        <a href="category.html?slug=atta" class="inline-block py-1 text-sm font-medium text-brand-700 hover:underline whitespace-nowrap">View all</a>
+        <div class="hidden sm:flex gap-1" data-row-arrows>
+          <button type="button" class="btn-icon border border-line" data-row-prev aria-label="Scroll Atta left"><svg class="size-5" aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+          <button type="button" class="btn-icon border border-line" data-row-next aria-label="Scroll Atta right"><svg class="size-5" aria-hidden="true"><use href="#i-chevron-right"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <ul class="scroll-row -mx-4 px-4 md:mx-0 md:px-0" data-row-track aria-label="Atta products"></ul>
+  </section>
+
+  <!-- ============ 10. Brand strip ============ -->
+  <section class="container-x pt-12 pb-16" aria-labelledby="brands-h">
+    <h2 id="brands-h" class="text-xl sm:text-2xl mb-4">Our brands</h2>
+    <ul id="brand-strip" class="scroll-row min-h-[5.5rem] -mx-4 px-4 md:mx-0 md:px-0" aria-label="Brands"></ul>
+  </section>
+</main>
+
+<!-- ============ 11. Footer ============ -->
+<footer class="bg-surface border-t border-line">
+  <div class="container-x py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <a href="./" class="flex items-center gap-2" aria-label="DeshiBasket home">
+        <svg class="size-8 text-brand-600" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M6 16h28l-3 16a3 3 0 0 1-3 2.5H12A3 3 0 0 1 9 32L6 16Z" fill="currentColor"/>
+          <path d="M13 16c0-6 3-10 7-10s7 4 7 10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span class="font-display font-bold text-lg">Deshi<span class="text-brand-600">Basket</span></span>
+      </a>
+      <p class="mt-4 text-sm text-ink-muted leading-relaxed">Authentic South Asian groceries — rice, atta, dal, spices and snacks — delivered across Germany. Sourced from trusted mills and packers, priced fairly.</p>
+      <ul class="mt-5 flex gap-2" aria-label="Social media">
+        <li><a href="https://facebook.com" class="btn-icon border border-line" aria-label="Facebook" rel="noopener"><svg class="size-5" aria-hidden="true"><use href="#i-facebook"/></svg></a></li>
+        <li><a href="https://instagram.com" class="btn-icon border border-line" aria-label="Instagram" rel="noopener"><svg class="size-5" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+        <li><a href="https://youtube.com" class="btn-icon border border-line" aria-label="YouTube" rel="noopener"><svg class="size-5" aria-hidden="true"><use href="#i-youtube"/></svg></a></li>
+        <li><a href="https://linkedin.com" class="btn-icon border border-line" aria-label="LinkedIn" rel="noopener"><svg class="size-5" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+      </ul>
+    </div>
+
+    <nav aria-labelledby="f-shop">
+      <h3 id="f-shop" class="text-sm font-semibold uppercase tracking-wide text-ink-muted">Shop</h3>
+      <ul id="footer-shop" class="mt-4 min-h-[15.5rem] space-y-2.5 text-sm"></ul>
+    </nav>
+
+    <nav aria-labelledby="f-support">
+      <h3 id="f-support" class="text-sm font-semibold uppercase tracking-wide text-ink-muted">Support</h3>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        <li><a href="about.html" class="inline-block py-0.5 hover:text-brand-700">About us</a></li>
+        <li><a href="faq.html" class="inline-block py-0.5 hover:text-brand-700">FAQ</a></li>
+        <li><a href="shipping.html" class="inline-block py-0.5 hover:text-brand-700">Shipping &amp; delivery</a></li>
+        <li><a href="track-order.html" class="inline-block py-0.5 hover:text-brand-700">Track order</a></li>
+        <li><a href="contact.html" class="inline-block py-0.5 hover:text-brand-700">Contact</a></li>
+        <li><a href="blog.html" class="inline-block py-0.5 hover:text-brand-700">Blog</a></li>
+        <li><a href="contact.html#feedback" class="inline-block py-0.5 hover:text-brand-700">Feedback</a></li>
+      </ul>
+    </nav>
+
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-wide text-ink-muted">Language</h3>
+      <div class="mt-4 inline-flex rounded-pill border border-line p-1 text-sm" role="group" aria-label="Language">
+        <button type="button" class="rounded-pill px-4 py-1.5 bg-ink text-white" aria-pressed="true" lang="en">English</button>
+        <button type="button" class="rounded-pill px-4 py-1.5 text-ink-muted hover:text-ink" aria-pressed="false" lang="de" title="Coming soon">Deutsch</button>
+      </div>
+      <h3 class="mt-8 text-sm font-semibold uppercase tracking-wide text-ink-muted">We accept</h3>
+      <ul class="mt-4 flex flex-wrap gap-2" aria-label="Payment methods">
+        <li><img src="assets/img/payment/visa.svg" width="64" height="40" alt="Visa" loading="lazy" class="h-8 w-[3.2rem]"></li>
+        <li><img src="assets/img/payment/mastercard.svg" width="64" height="40" alt="Mastercard" loading="lazy" class="h-8 w-[3.2rem]"></li>
+        <li><img src="assets/img/payment/maestro.svg" width="64" height="40" alt="Maestro" loading="lazy" class="h-8 w-[3.2rem]"></li>
+        <li><img src="assets/img/payment/paypal.svg" width="64" height="40" alt="PayPal" loading="lazy" class="h-8 w-[3.2rem]"></li>
+        <li><img src="assets/img/payment/apple-pay.svg" width="64" height="40" alt="Apple Pay" loading="lazy" class="h-8 w-[3.2rem]"></li>
+        <li><img src="assets/img/payment/google-pay.svg" width="64" height="40" alt="Google Pay" loading="lazy" class="h-8 w-[3.2rem]"></li>
+        <li><img src="assets/img/payment/sepa.svg" width="64" height="40" alt="SEPA" loading="lazy" class="h-8 w-[3.2rem]"></li>
+        <li><img src="assets/img/payment/klarna.svg" width="64" height="40" alt="Klarna" loading="lazy" class="h-8 w-[3.2rem]"></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-line">
+    <div class="container-x py-5 flex flex-col-reverse gap-4 md:flex-row md:items-center md:justify-between text-xs text-ink-muted">
+      <p>© <span id="year">2026</span> Deshi Basket. All prices incl. VAT.</p>
+      <ul class="flex flex-wrap gap-x-4 gap-y-2" aria-label="Legal">
+        <li><a href="legal/imprint.html" class="inline-block py-1 hover:text-brand-700">Imprint</a></li>
+        <li><a href="legal/privacy.html" class="inline-block py-1 hover:text-brand-700">Privacy</a></li>
+        <li><a href="legal/shipping-policy.html" class="inline-block py-1 hover:text-brand-700">Shipping</a></li>
+        <li><a href="legal/returns.html" class="inline-block py-1 hover:text-brand-700">Returns</a></li>
+        <li><a href="legal/cancellation.html" class="inline-block py-1 hover:text-brand-700">Cancellation</a></li>
+        <li><a href="legal/cookies.html" class="inline-block py-1 hover:text-brand-700">Cookies</a></li>
+        <li><a href="legal/terms.html" class="inline-block py-1 hover:text-brand-700">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ SVG icon sprite (inline; no icon font) ============ -->
+<svg xmlns="http://www.w3.org/2000/svg" hidden aria-hidden="true">
+  <defs>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.5L22 8H6.2"/><circle cx="10" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.5 7L12 17.7 5.7 21.2l1.5-7L2 9.4l7-.8z"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4"/><path d="M5 12v8h14v-8M12 8v12M12 8c-2.5 0-4-1.2-4-3a2 2 0 0 1 4 0M12 8c2.5 0 4-1.2 4-3a2 2 0 0 0-4 0"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.3-6-11a6 6 0 0 1 12 0c0 5.7-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V5h-3c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="m10 9 5 3-5 3z" fill="currentColor"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 9H4v11h2.5zM5.3 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM20 13.5c0-3-1.6-4.7-4-4.7-1.3 0-2.3.6-2.8 1.5V9H10.7v11h2.5v-5.8c0-1.4.7-2.3 2-2.3 1.2 0 1.8.8 1.8 2.3V20H20z"/></symbol>
+  </defs>
+</svg>
 </body>
 </html>
