@@ -2,7 +2,7 @@
 
 **Shohure — শহুরে** (Bengali for "urban") is the South Asian pantry for city life — a static grocery storefront — hand-written HTML, Tailwind CSS (CLI build), vanilla JavaScript, JSON data — hosted on GitHub Pages. Modelled on the structure of [desigros.com](https://desigros.com); brand, products and vendors are fictional placeholders.
 
-**Milestone 1 (this repo today):** the home page. See `../plan.md` and `../track.md` for the full roadmap.
+**Milestone 1 (this repo today):** the home page. Live at **https://arafat-bin-reza.github.io/Shohure/**.
 
 ## Run locally
 
@@ -58,7 +58,7 @@ scripts/
 
 ## Conventions
 
-- **Relative links only** (`category.html?slug=…`, `assets/…`). The site must work at `/`, at `/shop/`, and on a custom domain.
+- **Relative links only** (`category.html?slug=…`, `assets/…`). The site must work at `/`, at `/Shohure/`, and on a custom domain.
 - **No colour or font name in markup.** Tokens live in `@theme` in `src/input.css`.
 - **Every `localStorage` access is wrapped in `try/catch`.** Safari Private Mode and blocked site data throw.
 - **Every image has `width`/`height` attributes** and everything below the fold is `loading="lazy"`.
@@ -66,7 +66,7 @@ scripts/
 
 ## Deploy
 
-GitHub Pages, **Deploy from a branch → `main` / `(root)`**. No CI: `npm run build` locally, commit `assets/css/main.css`, push. Allow up to a minute, then hard-refresh.
+GitHub Pages, **Deploy from a branch → `main` / `(root)`**. No CI: `npm run build` locally, commit `assets/css/main.css`, push. Allow up to a minute, then hard-refresh. Canonical/OG URLs in `index.html` assume `https://arafat-bin-reza.github.io/Shohure/` — the only place to change for a custom domain.
 
 ## Fonts
 

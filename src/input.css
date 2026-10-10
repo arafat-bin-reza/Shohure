@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* Docs are not markup: prose words like "container" or "contents" would
+   otherwise become dead utilities. The local planning .md files in the root
+   are git-excluded but not .gitignored, so Tailwind would scan them too. */
+@source not "../*.md";
+@source not "../LICENSE";
+
 /* ------------------------------------------------------------------ */
 /* Self-hosted fonts (GDPR: no Google Fonts requests)                  */
 /* Files copied from @fontsource/* — see README "Fonts".               */

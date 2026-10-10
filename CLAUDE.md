@@ -18,9 +18,28 @@ Before every push: `npm run check && npm run build && npm run e2e`. There is no 
 
 `e2e` is a single script, not a test runner — there is no per-test filter. To check one thing, edit `scripts/e2e.mjs` or run a one-off puppeteer snippet against the same server. Env overrides: `E2E_URL`, `CHROME_PATH` (defaults to the standard Chrome install path). Lighthouse: `CHROME_PATH=... npx lighthouse@latest http://localhost:5173/ --form-factor=mobile --screenEmulation.mobile --output=json --output-path=<file>` — the launcher throws on exit on this machine but the report is written.
 
-Planning docs (`plan.md`, `track.md`, `project_context.md`) live **one level up**, outside the repo. Update `../track.md` after each milestone step.
+## Repo, deploy and planning docs
 
-This directory is its own git repo (no remote yet) nested inside the parent `Shohure` repo, which does have a GitHub remote. Commit here; never `git add` this folder from the parent — see the "Two git repositories" section in `../CLAUDE.md` for the pending layout decision.
+Remote `https://github.com/arafat-bin-reza/Shohure.git`, branch `main`, served by GitHub Pages (Deploy from a branch → `main` / `(root)`) at `https://arafat-bin-reza.github.io/Shohure/`. Pushing `main` is deploying — run the pre-push checks first. The site was built in a separate repo and merged in at `8672076`; its M1 history is the second parent of that merge.
+
+The planning documents sit in the repo root but are **local only** — listed in `.git/info/exclude`, never committed. Read them in this order when starting a session: `project_context.md` (orientation) → `track.md` (status, blockers, open decisions) → `plan.md` (the *why*) → `business_plan.md` (the offer, Track A/B). Roles — don't duplicate a fact across them; summarise and point:
+
+| File | Update when |
+|---|---|
+| `track.md` | **after every milestone step** (owner's explicit request): status marks `[ ]` `[~]` `[x]` `[!]` (blocked → row in §Blockers) `[-]` (n/a for the chosen track); decisions with reasoning and what was rejected go in the decision log; add a session-log row when finishing |
+| `plan.md` | only when scope or approach actually changes |
+| `project_context.md` | at milestone boundaries |
+| `README.md` (public) | when a command or data rule changes |
+| this file | when a module boundary or rule changes |
+
+Track A (portfolio demo) vs Track B (real store) is undecided and only needed by the end of M5.
+
+## Environment gotchas on this machine
+
+- Windows 11, Git Bash. **No Python, no `gh`** (Pages settings are changed by the owner on github.com). Node 24 / npm 11.
+- Port 8080 is taken by a local Postgres — hence 5173.
+- Bash heredocs mangle backslashes in regexes; use the Edit/Write tools or a Node script file for patches. Files containing Bengali text should also go through Edit/Write, not shell redirection.
+- Headless Chrome via CLI flags clamps window width to ~500px — mobile checks must use puppeteer `setViewport` (`scripts/e2e.mjs` does).
 
 ## Architecture
 
@@ -46,7 +65,7 @@ Static site: one hand-written HTML page per route, Tailwind v4 via CLI, vanilla 
 
 ## Rules that are load-bearing
 
-- **Relative links only** (`category.html?slug=…`, `assets/…`). The site must work at `/`, `/shop/`, and a custom domain. Canonical/OG URLs in `index.html` are the only absolute ones.
+- **Relative links only** (`category.html?slug=…`, `assets/…`). The site must work at `/`, `/Shohure/`, and a custom domain. Canonical/OG URLs in `index.html` are the only absolute ones.
 - **Prices are integer cents.** Unit price (`3,00 € / kg`) is derived in `format.js`, never stored. `npm run check` enforces this and every cross-reference.
 - **Every `localStorage` access is inside `try/catch`** — Safari Private Mode throws and an unhandled throw kills every script after it.
 - **Every container JS fills must reserve its final height in the HTML** (skeleton tiles, `min-h-*`). An empty `<ul>` growing on render was the entire CLS (0.134 → 0). Adding a new JS-rendered section without a placeholder will regress this.
