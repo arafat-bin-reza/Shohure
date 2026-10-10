@@ -1,6 +1,6 @@
-# Deshi Basket
+# Shohure — শহুরে
 
-A static South Asian grocery storefront — hand-written HTML, Tailwind CSS (CLI build), vanilla JavaScript, JSON data — hosted on GitHub Pages. Modelled on the structure of [desigros.com](https://desigros.com); brand, products and vendors are fictional placeholders.
+**Shohure — শহুরে** (Bengali for "urban") is the South Asian pantry for city life — a static grocery storefront — hand-written HTML, Tailwind CSS (CLI build), vanilla JavaScript, JSON data — hosted on GitHub Pages. Modelled on the structure of [desigros.com](https://desigros.com); brand, products and vendors are fictional placeholders.
 
 **Milestone 1 (this repo today):** the home page. See `../plan.md` and `../track.md` for the full roadmap.
 

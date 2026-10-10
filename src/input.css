@@ -12,7 +12,9 @@
 
 /* ------------------------------------------------------------------ */
 /* Design tokens — the ONLY place a colour or font name is defined.    */
-/* Brand: "Deshi Basket" — turmeric/saffron primary, leaf-green accent */
+/* Brand: "Shohure — শহুরে" (Bengali for "urban") — positioned as the South Asian  */
+/* pantry for city life. Warm turmeric/saffron primary + leaf-green accent on a     */
+/* neutral, concrete-toned off-white; crisp radii; no rustic textures.              */
 /* ------------------------------------------------------------------ */
 @theme {
   /* brand — turmeric */
@@ -35,11 +37,11 @@
   --color-leaf-700: #1f5a2c;
 
   /* neutrals */
-  --color-cream:      #fffbf5;
+  --color-cream:      #faf9f6;  /* neutral off-white ("concrete"), not a warm cream */
   --color-ink:        #1c1917;
   --color-ink-muted:  #57534e;
   --color-ink-faint:  #6f6a64;  /* 5.4:1 on white — AA */
-  --color-line:       #ebe5dc;
+  --color-line:       #e6e2db;
   --color-surface:    #ffffff;
 
   /* semantic */
@@ -51,7 +53,7 @@
   --font-body:    "Inter", ui-sans-serif, system-ui, sans-serif;
 
   /* shape */
-  --radius-card: 0.875rem;
+  --radius-card: 0.75rem;
   --radius-pill: 9999px;
 
   /* elevation */

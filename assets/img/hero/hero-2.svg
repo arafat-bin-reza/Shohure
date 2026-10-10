@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 640" width="1600" height="640" role="img" aria-label="Fresh atta, every Friday">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 640" width="1600" height="640" role="img" aria-label="Basmati week">
   <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#1f5a2c"/><stop offset="1" stop-color="#2f7a3e"/></linearGradient></defs>
   <rect width="1600" height="640" fill="url(#g)"/>
-  <circle cx="1300" cy="320" r="260" fill="#fff" opacity=".08"/>
-  <circle cx="1420" cy="120" r="140" fill="#fff" opacity=".08"/>
-  <circle cx="1180" cy="520" r="90" fill="#fff" opacity=".06"/>
+  <circle cx="1400" cy="150" r="90" fill="#fff" opacity=".14"/>
+  <g fill="#fff" opacity=".1"><rect x="820" y="490" width="70" height="150"/><rect x="900" y="410" width="50" height="230"/><rect x="960" y="450" width="90" height="190"/><rect x="1060" y="340" width="40" height="300"/><rect x="1110" y="400" width="80" height="240"/><rect x="1200" y="470" width="60" height="170"/><rect x="1270" y="310" width="100" height="330"/><rect x="1380" y="430" width="50" height="210"/><rect x="1440" y="370" width="70" height="270"/><rect x="1520" y="480" width="40" height="160"/><rect x="1570" y="520" width="30" height="120"/></g>
+  <rect y="628" width="1600" height="12" fill="#fff" opacity=".1"/>
 </svg>

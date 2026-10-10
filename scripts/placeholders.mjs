@@ -92,19 +92,27 @@ function brandSvg(b) {
 }
 
 // ---------- hero banners ----------
+// Brand positioning is "urban", so the banners carry a low-contrast city skyline
+// on the right (the copy sits on the left over a dark gradient in index.html).
 const HEROES = [
-  { id: 1, title: 'Basmati week', sub: 'Up to 20% off aged basmati', a: '#a85504', b: '#e8850c' },
-  { id: 2, title: 'Fresh atta, every Friday', sub: 'Stone-ground and delivered within 48h', a: '#1f5a2c', b: '#2f7a3e' },
-  { id: 3, title: 'Free delivery over 49 €', sub: 'Across Germany · next-day in Berlin', a: '#6d380d', b: '#cf6f06' },
+  { id: 1, title: 'Groceries for city life', sub: 'Shohure — শহুরে · the South Asian pantry for the city', a: '#a85504', b: '#e8850c' },
+  { id: 2, title: 'Basmati week', sub: 'Up to 20% off aged basmati', a: '#1f5a2c', b: '#2f7a3e' },
+  { id: 3, title: 'Same-day in Berlin', sub: 'Inside the S-Bahn ring · next-day across Germany', a: '#6d380d', b: '#cf6f06' },
+];
+// [x, width, height] — a dozen blocks of varying height read as a skyline at any size
+const SKYLINE = [
+  [820, 70, 150], [900, 50, 230], [960, 90, 190], [1060, 40, 300], [1110, 80, 240], [1200, 60, 170],
+  [1270, 100, 330], [1380, 50, 210], [1440, 70, 270], [1520, 40, 160], [1570, 30, 120],
 ];
 function heroSvg(h) {
+  const blocks = SKYLINE.map(([x, w, hh]) => `<rect x="${x}" y="${640 - hh}" width="${w}" height="${hh}"/>`).join('');
   return `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 640" width="1600" height="640" role="img" aria-label="${esc(h.title)}">
   <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="${h.a}"/><stop offset="1" stop-color="${h.b}"/></linearGradient></defs>
   <rect width="1600" height="640" fill="url(#g)"/>
-  <circle cx="1300" cy="320" r="260" fill="#fff" opacity=".08"/>
-  <circle cx="1420" cy="120" r="140" fill="#fff" opacity=".08"/>
-  <circle cx="1180" cy="520" r="90" fill="#fff" opacity=".06"/>
+  <circle cx="1400" cy="150" r="90" fill="#fff" opacity=".14"/>
+  <g fill="#fff" opacity=".1">${blocks}</g>
+  <rect y="628" width="1600" height="12" fill="#fff" opacity=".1"/>
 </svg>`;
 }
 
@@ -113,7 +121,7 @@ const PAYMENTS = ['Visa', 'Mastercard', 'Maestro', 'PayPal', 'Apple Pay', 'Googl
 function paymentSvg(name) {
   return `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 40" width="64" height="40" role="img" aria-label="${esc(name)}">
-  <rect x=".5" y=".5" width="63" height="39" rx="6" fill="#fff" stroke="#ebe5dc"/>
+  <rect x=".5" y=".5" width="63" height="39" rx="6" fill="#fff" stroke="#e6e2db"/>
   <text x="32" y="25" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="${name.length > 7 ? 9 : 11}" font-weight="700" fill="#1c1917">${esc(name)}</text>
 </svg>`;
 }
