@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Sweets">
+  <rect width="400" height="400" fill="#dbf0de"/>
+  <circle cx="200" cy="200" r="120" fill="#fff" stroke="#1f5a2c" stroke-width="6"/>
+  <text x="200" y="228" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="92" font-weight="700" fill="#1f5a2c">S</text>
+</svg>

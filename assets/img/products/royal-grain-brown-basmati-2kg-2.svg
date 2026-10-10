@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Royal Grain Brown Basmati Rice">
+  <rect width="600" height="600" fill="#fdebc8" opacity="0.92"/>
+  <g transform="skewY(-4) translate(0 30)">
+    <rect x="150" y="90" width="300" height="420" rx="26" fill="#fff" stroke="#a85504" stroke-width="6"/>
+    <rect x="150" y="90" width="300" height="70" rx="26" fill="#a85504"/>
+    <rect x="150" y="130" width="300" height="30" fill="#a85504"/>
+    <text x="300" y="138" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#fff" letter-spacing="1">ROYAL GRAIN</text>
+    <text x="300" y="250" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#a85504">Royal Grain Brown</text>
+    <text x="300" y="290" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="28" font-weight="600" fill="#a85504">Basmati Rice</text>
+    <rect x="215" y="400" width="170" height="44" rx="22" fill="#fdebc8" stroke="#a85504" stroke-width="3"/>
+    <text x="300" y="429" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#a85504">2 kg</text>
+  </g>
+  <text x="300" y="570" text-anchor="middle" font-family="Poppins, Inter, system-ui, sans-serif" font-size="14" fill="#a85504" opacity=".6">placeholder · replace with product photo</text>
+</svg>
