@@ -51,7 +51,7 @@ Static site: one hand-written HTML page per route, Tailwind v4 via CLI, vanilla 
 
 **Data layer (`data.js`):** fetches the three JSON files once and returns lookup helpers (`topLevel()`, `children(slug)`, `tiles()`, `bySubcategory(slug)`, `productBySku` / `productBySlug` Maps, `brand()`, `category()`). All rendering code takes this `data` object; nothing re-fetches.
 
-**Rendering (`render.js`):** `productCard(p, data)` is the most reused component in the project — M2/M3 must reuse it unchanged (fix the shared component if it needs changes). `skeletonCard()` mirrors it tag-for-tag with transparent text so heights match exactly. `html()` escapes everything interpolated into markup.
+**Rendering (`render.js`):** `productCard(p, data)` is the most reused component in the project — M2/M3 must reuse it unchanged (fix the shared component if it needs changes). `skeletonCard()` mirrors it tag-for-tag with transparent text so heights match exactly. Rendering is template strings assigned via `innerHTML`; `html(s)` is a plain escape function, not a tagged template — wrap every data-derived interpolation in it yourself. `icon(name)` emits `<use href="#i-name">` pointing at the inline `<symbol>` sprite at the bottom of `index.html`, so each new HTML page must carry that sprite too.
 
 **Cart (`cart.js`):** `localStorage` key `cart:v1`; `write()` dispatches a `cart:changed` event that the badge and drawer subscribe to — that event is the only way UI learns about cart changes. `reconcile(data)` runs on load and drops vanished SKUs / updates changed prices / flags sold-out items. `render()` re-creates the line list with `innerHTML`, so it captures and restores focus on the active stepper — keep that when touching it.
 
@@ -61,12 +61,12 @@ Static site: one hand-written HTML page per route, Tailwind v4 via CLI, vanilla 
 
 **Carousels (`carousel.js`):** `initHero` (fade, autoplay paused on hover/focus/hidden tab, disabled under `prefers-reduced-motion`, swipe, ← →) and `initScrollRow` (CSS scroll-snap rows; arrows disable at the ends via Resize/MutationObserver and are not rendered on `(hover: none), (pointer: coarse)`).
 
-**Styling (`src/input.css`):** all tokens are in `@theme` (Tailwind v4 — no `tailwind.config.js`); hand-written pieces are in `@layer components`. Tailwind v4 cannot `@apply` a custom component class inside another — variants are separate classes composed in markup (`class="btn btn-primary"`, `class="badge badge-sale"`). Fonts are self-hosted `woff2` (no Google Fonts — GDPR); add a weight by copying the file from `@fontsource` and adding an `@font-face`.
+**Styling (`src/input.css`):** never edit `assets/css/main.css` by hand — it is the build output. No raw colour or font names in markup; all tokens are in `@theme` (Tailwind v4 — no `tailwind.config.js`); hand-written pieces are in `@layer components`. Tailwind v4 cannot `@apply` a custom component class inside another — variants are separate classes composed in markup (`class="btn btn-primary"`, `class="badge badge-sale"`). Fonts are self-hosted `woff2` (no Google Fonts — GDPR); add a weight by copying the file from `@fontsource` and adding an `@font-face`.
 
 ## Rules that are load-bearing
 
 - **Relative links only** (`category.html?slug=…`, `assets/…`). The site must work at `/`, `/Shohure/`, and a custom domain. Canonical/OG URLs in `index.html` are the only absolute ones.
-- **Prices are integer cents.** Unit price (`3,00 € / kg`) is derived in `format.js`, never stored. `npm run check` enforces this and every cross-reference.
+- **Prices are integer cents.** Unit price (`3,00 € / kg`) is derived in `format.js`, never stored. `npm run check` enforces this and every cross-reference. The full data-entry rules (`comparePrice` > `price` or `null`, `subcategory.parent === category`, `unit.uom` enum, `images[0]` = card / `images[1]` = hover, `tile: true` for the home grid) are in README §"Add a product".
 - **Every `localStorage` access is inside `try/catch`** — Safari Private Mode throws and an unhandled throw kills every script after it.
 - **Every container JS fills must reserve its final height in the HTML** (skeleton tiles, `min-h-*`). An empty `<ul>` growing on render was the entire CLS (0.134 → 0). Adding a new JS-rendered section without a placeholder will regress this.
 - **Every `<img>` has `width`/`height`**; below the fold is `loading="lazy"`; the first catalogue tile is `eager` + `fetchpriority="high"` because it is the LCP element on phones (the gradient hero SVG is too low-entropy for Chrome to count).
